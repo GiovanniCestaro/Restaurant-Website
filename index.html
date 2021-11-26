@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Website</title>
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <!-- custom css file link -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+
     <!-- header section starts -->
 
     <header>
+
       <a href="#" class="logo"><i class="fas fa-utensils"></i>resto.</a>
 
       <nav class="navbar">
@@ -40,19 +37,15 @@
         <a href="#" class="fas fa-heart"></a>
         <a href="#" class="fas fa-shopping-cart"></a>
       </div>
+
     </header>
 
     <!-- header section ends -->
 
-    <!-- section form -->
+    <!-- search form -->
 
     <form action="" id="search-form">
-      <input
-        type="search"
-        placeholder="search here..."
-        name=""
-        id="search-box"
-      />
+      <input type="search" placeholder="search here..." name="" id="search-box">
       <label for="search-box" class="fas fa-search"></label>
       <i class="fas fa-times" id="close"></i>
     </form>
@@ -60,8 +53,11 @@
     <!-- home section starts -->
 
     <section class="home" id="home">
+
       <div class="swiper home-slider">
+
         <div class="swiper-wrapper wrapper">
+
           <div class="swiper-slide slide">
             <div class="content">
               <span>our special dish</span>
@@ -73,9 +69,10 @@
               <a href="#" class="btn">order now</a>
             </div>
             <div class="image">
-              <img src="images/home-img-1.png" alt="" />
+              <img src="images/home-img-1.png" alt="">
             </div>
           </div>
+
           <div class="swiper-slide slide">
             <div class="content">
               <span>our special dish</span>
@@ -87,7 +84,7 @@
               <a href="#" class="btn">order now</a>
             </div>
             <div class="image">
-              <img src="images/home-img-2.png" alt="" />
+              <img src="images/home-img-2.png" alt="">
             </div>
           </div>
           <div class="swiper-slide slide">
@@ -214,7 +211,9 @@
           <span>$15.99</span>
           <a href="#" class="btn">add to cart</a>
         </div>
+
       </div>
+
     </section>
 
     <!-- dishes section ends -->
@@ -222,10 +221,12 @@
     <!-- about section starts -->
 
     <section class="about" id="about">
+
       <h3 class="sub-heading">about us</h3>
       <h1 class="heading">why choose us?</h1>
 
       <div class="row">
+
         <div class="image">
           <img src="images/about-img.png" alt="" />
         </div>
@@ -254,12 +255,14 @@
             </div>
             <div class="icons">
               <i class="fas fa-headset"></i>
-              <span>24/7 services</span>
+              <span>24/7 service</span>
             </div>
           </div>
           <a href="#" class="btn">learn more</a>
         </div>
+
       </div>
+
     </section>
 
     <!-- about section ends -->
@@ -267,8 +270,9 @@
     <!-- menu section starts -->
 
     <section class="menu" id="menu">
-      <h3 class="sub-heading">our menu</h3>
-      <h1 class="heading">today's speciality</h1>
+
+      <h3 class="sub-heading"> our menu </h3>
+      <h1 class="heading"> today's speciality </h1>
 
       <div class="box-container">
         <div class="box">
@@ -586,11 +590,70 @@
     </section>
 
     <!-- review section ends -->
-
+    
     <!-- order section starts -->
+
+    <section class="order" id="order">
+
+      <h3 class="sub-heading"> order now </h3>
+      <h1 class="heading"> free and fast </h1>
+
+      <form action="">
+
+        <div class="inputBox">
+          <div class="input">
+            <span>your name</span>
+            <input type="text" placeholder="enter your name">
+          </div>
+          <div class="input">
+            <span>your number</span>
+            <input type="text" placeholder="(011) 99999-9999 ou (011) 9999-99999" onblur="mascaraDeTelefone(this)" onfocus="tiraHifen(this)" onkeypress="return onlynumber();">
+          </div>
+        </div>
+
+        <div class="inputBox">
+          <div class="input">
+            <span>your order</span>
+            <input type="text" placeholder="enter food name">
+          </div>
+          <div class="input">
+            <span>additional food</span>
+            <input type="test" placeholder="extra with food">
+          </div>
+        </div>
+
+        <div class="inputBox">
+          <div class="input">
+            <span>how much</span>
+            <input type="number" placeholder="how many orders">
+          </div>
+          <div class="input">
+            <span>date anda time</span>
+            <input type="datetime-local">
+          </div>
+        </div>
+
+        <div class="inputBox">
+          <div class="input">
+            <span>your adress</span>
+            <textarea name="" placeholder="enter your adress" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div class="input">
+            <span>your message</span>
+            <textarea name="" placeholder="enter your message" id="" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+
+        <input type="submit" value="order now" class="btn">
+
+      </form>
+
+    </section>
+
     <!-- order section ends -->
 
     <!-- footer section starts -->
+
     <section class="footer">
       <div class="box-container">
         <div class="box">
@@ -613,8 +676,8 @@
           <h3>contact info</h3>
           <a href="#">(11)1234-5678</a>
           <a href="#">(11)8765-4321</a>
-          <a href="#">frontend@ferrarezzisis.com.br</a>
-          <a href="#">frontend@ferrarezzisis.com.br</a>
+          <a class="email" href="#">frontend@ferrarezzisis.com.br</a>
+          <a class="email" href="#">contato@ferrarezzisis.com.br</a>
         </div>
         <div class="box">
           <h3>follow us</h3>
@@ -625,13 +688,13 @@
         </div>
       </div>
       <div class="credit">
-        copyright @ 2021 by <span>mr. web designer</span>
+        copyright @ 2021 by <span>FerrarezziSis</span>
       </div>
     </section>
 
     <!-- footer section ends -->
 
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>

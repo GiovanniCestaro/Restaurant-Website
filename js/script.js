@@ -1,9 +1,9 @@
-let menu = document.querySelector('#menu-bars')
-let navbar = document.querySelector('.navbar')
+let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector('.navbar');
 
-menu.onclick = () => {
-  menu.classList.toggle('fa-times')
-  navbar.classList.toggle('active')
+menu.onclick = () =>{
+  menu.classList.toggle('fa-times');
+  navbar.classList.toggle('active');
 }
 
 let section = document.querySelectorAll('section')
@@ -30,12 +30,12 @@ window.onscroll = () => {
   })
 }
 
-document.querySelector('#search-icon').onclick = () => {
-  document.querySelector('#search-form').classList.toggle('active')
+document.querySelector('#search-icon').onclick = () =>{
+  document.querySelector('#search-form').classList.toggle('active');
 }
 
-document.querySelector('#close').onclick = () => {
-  document.querySelector('#search-form').classList.remove('active')
+document.querySelector('#close').onclick = () =>{
+  document.querySelector('#search-form').classList.remove('active');
 }
 
 var swiper = new Swiper('.home-slider', {
@@ -43,21 +43,21 @@ var swiper = new Swiper('.home-slider', {
   centeredSlides: true,
   autoplay: {
     delay: 7500,
-    disableOnInteraction: false
+    disableOnInteraction: false,
   },
   pagination: {
     el: '.swiper-pagination',
-    clickable: true
+    clickable: true,
   },
-  loop: true
-})
+  loop: true,
+});
 
 var swiper = new Swiper('.review-slider', {
   spaceBetween: 20,
   centeredSlides: true,
   autoplay: {
     delay: 7500,
-    disableOnInteraction: false
+    disableOnInteraction: false,
   },
   loop: true,
   breakpoints: {
@@ -75,3 +75,50 @@ var swiper = new Swiper('.review-slider', {
     }
   }
 })
+
+// Função para permitir apenas números no campo de telefone
+
+function onlynumber(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  //var regex = /^[0-9.,]+$/;
+  var regex = /^[0-9.]+$/;
+  if( !regex.test(key) ) {
+     theEvent.returnValue = false;
+     if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+
+// Função para determinar se é telefone fixo ou celular
+
+function mascaraDeTelefone(telefone){
+  const textoAtual = telefone.value;
+  const isCelular = textoAtual.length >= 12;
+  let textoAjustado;
+  if(isCelular) {
+      const parte0 = textoAtual.slice(0,3);
+      const parte1 = textoAtual.slice(3,8);
+      const parte2 = textoAtual.slice(8,12);
+      textoAjustado = `${parte0}-${parte1}-${parte2}`       
+  } else {
+      const parte0 = textoAtual.slice(0,3);
+      const parte1 = textoAtual.slice(3,7);
+      const parte2 = textoAtual.slice(7,11);
+      textoAjustado = `${parte0}-${parte1}-${parte2}`
+  }
+
+  telefone.value = textoAjustado;
+}
+
+// Função para remover hífen
+
+function tiraHifen(telefone) {
+  const textoAtual = telefone.value;
+  const textoAjustado = textoAtual.replace(/\-/g, '');
+
+  telefone.value = textoAjustado;
+}
+
+// Função para ajustar o texto
+
